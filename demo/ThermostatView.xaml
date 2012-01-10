@@ -1,0 +1,42 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="WiredPrairieUS.Demo.ThermostatView"
+	x:Name="UserControl"
+	d:DesignWidth="480" d:DesignHeight="320" MinWidth="250" MinHeight="250">
+
+	<Grid x:Name="LayoutRoot">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="20"/>
+		</Grid.RowDefinitions>
+		<Rectangle Fill="{DynamicResource LoginLabelForegroundBrush}" RadiusX="8" RadiusY="8" StrokeThickness="0"/>
+		<Border BorderBrush="#FF888D84" BorderThickness="6" Margin="8" Grid.Row="1" Grid.RowSpan="1" Background="#FFD1DACA" CornerRadius="12">
+			<Grid Margin="12">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0.146*"/>
+					<RowDefinition Height="0.708*"/>
+					<RowDefinition Height="0.146*"/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="0.124*"/>
+					<ColumnDefinition Width="0.684*"/>
+					<ColumnDefinition Width="0.192*"/>
+				</Grid.ColumnDefinitions>
+				<Grid Grid.Column="1" Margin="8" Grid.Row="1">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="10"/>
+					</Grid.RowDefinitions>
+					<TextBlock TextWrapping="Wrap" Text="{Binding CurrentTemperatureF, FallbackValue=70}" HorizontalAlignment="Left" FontWeight="Bold" FontSize="96" Foreground="#A5000000" />					
+				</Grid>
+			</Grid>
+		</Border>
+		<Rectangle Fill="{DynamicResource LoginLabelForegroundBrush}" Grid.Row="4"/>
+		<TextBlock TextWrapping="Wrap" Text="{Binding Path=Name, FallbackValue=Thermostat}" FontSize="18.667" TextTrimming="CharacterEllipsis" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Opacity="0.655" Margin="6,12"/>
+	</Grid>
+</UserControl>

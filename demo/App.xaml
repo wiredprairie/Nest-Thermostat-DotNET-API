@@ -1,0 +1,21 @@
+﻿<Application
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:WiredPrairieUS_Demo="clr-namespace:WiredPrairieUS.Demo" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Demo.App"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         
+    	<SolidColorBrush x:Key="LoginTextFieldBorderBrush" Color="#FF7C8790"/>
+    	<SolidColorBrush x:Key="LoginLabelForegroundBrush" Color="#FF9AA09F"/>
+		<SolidColorBrush x:Key="LoginAreaBackgroundBrush" Color="#FFEBF4F3"/>
+    	<DataTemplate x:Key="ThermostatItemTemplate">
+    		<Grid>
+    			<WiredPrairieUS_Demo:ThermostatView Margin="8,8,0,0" d:LayoutOverrides="Width, Height"/>
+    		</Grid>
+    	</DataTemplate>
+    	<ItemsPanelTemplate x:Key="ThermostatViewItemsPanel">
+    		<StackPanel IsItemsHost="True" Orientation="Horizontal"/>
+    	</ItemsPanelTemplate>
+         
+    </Application.Resources>
+</Application>

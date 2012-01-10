@@ -1,0 +1,40 @@
+﻿<Window x:Class="WiredPrairieUS.Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Nest Thermostat API Demo" Height="500" Width="640" FontFamily="Arial" FontSize="16">
+	<Window.Resources>
+	</Window.Resources>
+    <Grid>
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="Auto"/>
+    		<RowDefinition Height="*"/>
+    	</Grid.RowDefinitions>
+    	<Border Margin="8" Padding="10" Background="{DynamicResource LoginAreaBackgroundBrush}" CornerRadius="0,32,0,0">
+    		<Grid MaxWidth="320"  >
+    			<Grid.ColumnDefinitions >
+    				<ColumnDefinition Width="Auto"/>
+    				<ColumnDefinition Width="*"/>
+    			</Grid.ColumnDefinitions>
+    			<Grid.RowDefinitions>
+    				<RowDefinition Height="Auto"/>
+    				<RowDefinition Height="Auto"/>
+    				<RowDefinition Height="Auto"/>
+    				<RowDefinition Height="Auto"/>
+    			</Grid.RowDefinitions>
+				<TextBlock Foreground="#FF666666" Grid.ColumnSpan="2" FontWeight="Bold">Log in to your Nest Account</TextBlock>
+    			<TextBox x:Name="txtLogin" Grid.Row="1" Margin="8,6,0,6" BorderThickness="6" BorderBrush="{DynamicResource LoginTextFieldBorderBrush}" Grid.Column="1" />        	
+    			<PasswordBox x:Name="txtPassword" Margin="8,0,0,6" Grid.Row="2" BorderThickness="6" BorderBrush="{DynamicResource LoginTextFieldBorderBrush}" Grid.Column="1"/>
+    			<TextBlock Grid.Row="1" Text="email" Margin="6" VerticalAlignment="Center" Foreground="{DynamicResource LoginLabelForegroundBrush}"/>
+    			<TextBlock Grid.Row="2" Text="password" Margin="6" VerticalAlignment="Center" Foreground="{DynamicResource LoginLabelForegroundBrush}"/>        	
+    			<Button Content="Login" HorizontalAlignment="Right" x:Name="btnLogin" Width="70" Click="btnLogin_Click" Grid.Row="3" Grid.Column="1" />
+    		</Grid>
+    	</Border>
+    	<Grid Margin="8" Grid.Row="1">
+    		<ScrollViewer Margin="8" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+    			<ItemsControl ItemsSource="{Binding Devices}" ItemTemplate="{DynamicResource ThermostatItemTemplate}" ItemsPanel="{DynamicResource ThermostatViewItemsPanel}">
+    							
+				</ItemsControl>
+    		</ScrollViewer>
+    	</Grid>
+    </Grid>
+</Window>
